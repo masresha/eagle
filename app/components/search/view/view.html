@@ -1,0 +1,25 @@
+<link href="assets/imagecss.css" rel="stylesheet">
+<h1>Modal</h1>
+<div class="modal-header" data-backdrop="static">
+  
+</div>
+<div id="printdata">
+
+                          <h2>{{$ctrl.searchdata.description}}</h2>
+                          <h2>{{$ctrl.searchdata.due_date}}</h2>
+                          <h2>{{$ctrl.searchdata.email}}</h2>
+                          <h2>{{$ctrl.searchdata.exprience}}</h2>
+                          <h2>{{$ctrl.searchdata.level}}</h2>
+                          <h2>{{$ctrl.searchdata.number_required}}</h2>
+                          <h2>{{$ctrl.searchdata.position}}</h2>
+                          <h2>{{$ctrl.searchdata.qualifications}}</h2>
+                          <h2>{{$ctrl.searchdata.salary}}</h2>             
+
+</div>
+ </div>
+<div class="modal-footer">
+  
+ <button class="btn btn-primary" type="button" ng-click="$ctrl.prints()">Print</button>
+  <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+  <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+</div>

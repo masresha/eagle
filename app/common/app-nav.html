@@ -1,0 +1,143 @@
+<script src="assets/common-scripts.js"></script>
+<script class="include" type="text/javascript" src="assets/jquery.dcjqaccordion.2.7.js"></script>
+<header class="header black-bg">
+    <div class="sidebar-toggle-box">
+        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+      </div>
+    <!--logo start-->
+    <a href="#" class="logo"><b>Eagles</b></a>
+     <img src="assets/img/Eagle.png" class="img-circle" width="60" class="logo">
+    <!--logo end-->
+    <ul class="nav pull-right top-menu">
+     <li>
+      <div class="menu-demo-container" layout-align="center center" layout="column">
+      <div id="google_translate_element"></div>
+         <script type="text/javascript">
+           function googleTranslateElementInit() {
+           new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                 }
+        </script>
+       <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+       </script>
+                <!--<md-menu>
+                    <md-button class="md-icon-button" ng-click="$mdMenu.open()">
+                        <md-icon md-menu-origin class="material-icons redish">more_vert</md-icon>
+                    </md-button>
+                    <md-menu-content width="2">
+                        <md-menu-item>
+                            <md-button ng-click="$ctrl.edit('md',user)">
+                                <md-icon md-menu-origin class="material-icons">edit</md-icon>
+                                Edit Profile
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-divider></md-menu-divider>
+                        <md-menu-item>
+                            <md-button ng-click="$ctrl.changepassword('md',user)">
+                                <md-icon md-menu-origin class="material-icons">edit</md-icon>
+                                Change Password
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-divider></md-menu-divider>
+                        <md-menu-item>
+                            <md-button ng-click="$ctrl.logout()">
+                                <md-icon md-menu-origin class="material-icons">exit_to_app</md-icon>
+                                Logout
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>-->
+            </div>
+            </div>
+        </li>
+    </ul>
+</header>
+
+<aside>
+    <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+           <p class="centered">
+                <a href="profile.html"><img src="assets/img/Eagle.png" class="img-circle" width="60"></a>
+            </p>
+            <h5 class="centered">{{$ctrl.userv.user.email}}</h5>
+
+            <li class="sub-menu">
+                <a class="active" ui-sref="dashboard">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            
+             
+            <li class="sub-menu">
+                <a ui-sref="usermanage">
+                    <i class="fa fa-user"></i>
+                    <span>Manage Staff</span>
+                </a>
+
+            </li>
+            <li class="sub-menu">
+                <a ui-sref="customers">
+                    <i class="fa fa-users"></i>
+                    <span>Manage Customers</span>
+                </a>
+
+            </li>
+            
+            <li class="sub-menu">
+                <a ui-sref="vacancy">
+                    <i class="fa fa-briefcase"></i>
+                    <span>Manage Vacancy</span>
+                </a>
+
+            </li>
+            <li class="sub-menu">
+                <a ui-sref="jobcategory">
+                    <i class="fa fa-user"></i>
+                    <span>Manage Categories</span>
+                </a>
+
+            </li>
+            <li class="sub-menu">
+                <a ui-sref="search">
+                    <i class="fa fa-search"></i>
+                    <span>Search Vacancy</span>
+                </a>
+
+            </li>
+            <li class="sub-menu">
+                <a ui-sref="createvac">
+                    <i class="fa fa-plus"></i>
+                    <span>Create Vacancy(Amharic)</span>
+                </a>
+
+            </li>
+            <li class="sub-menu">
+                <a ui-sref="cards">
+                    <i class="fa fa-credit-card"></i>
+                    <span>Manage Cards</span>
+                </a>
+
+            </li>
+            <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-mobile"></i>
+                        <span>Profile</span>
+                    </a>
+                    <!--<ul class="sub">
+                        <li><a ui-sref="jobcategory" hidden>Edit Profile</a></li>
+                        <li><a ui-sref="jobcategory" hidden>Change Password</a></li>
+                    </ul>-->
+                </li>
+                 <li class="sub-menu">
+                <a ng-click="$ctrl.logout()">
+                    <i class="fa fa-sign-out"></i>
+                    <span>Log Out</span>
+                </a>
+
+            </li>
+
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+</aside>

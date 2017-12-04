@@ -1,0 +1,23 @@
+<div ng-controller="LoginController" layout="column" ng-cloak>
+    <div class="logincontainer">
+        <div id="login">
+          <div id="infosuccess" hidden>
+             <span class="label label-success"> Successfully</span>
+           </div>
+            <div id="infofail" hidden>
+              <span class="label label-warning"> Please Fill Out The Form Again!!!</span>
+            </div>
+            <span us-spinner="{radius:20, width:8, length:8}"></span>
+            <form name="projectForm">
+                <fieldset class="clearfix">
+                   <p><span><md-icon md-menu-origin class="class=material-icons redish">account_circle</md-icon></span><input required type="text" name="Username" ng-model="$ctrl.user_name" placeholder="Username"></p>
+                    <!-- JS because of IE support; better: placeholder="Username" -->
+                    <p><span><md-icon md-menu-origin class="material-icons redish">lock_outline</md-icon></span><input required type="password" type="password" name="pasword" ng-model="$ctrl.password" placeholder="Password">
+                     <!-- JS because of IE support; better: placeholder="Password" -->
+                    <p><button id="buttonlogin" type="button" ng-click="$ctrl.login()" ng-disabled="projectForm.$invalid" class="btn btn-primary btn-lg">Log In</button></p>
+                </fieldset>
+            </form>
+            <!--<p> <a ui-sref="" class="blue">Forgot Password?</a><span class="fontawesome-arrow-right"></span></p>-->
+        </div>
+    </div>
+</div>

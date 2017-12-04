@@ -1,0 +1,68 @@
+<div class="col-lg-12 main-chart" ng-controller="VacancyController" ng-cloak>
+    <h1 class="page-title">Vacancy list</h1>
+    <div class="panel-body">
+        <div class="alert alert-success" id="infosuccess" hidden>
+        Operation Successfull.
+      </div>
+      <div class="alert alert-danger" id="infofail" hidden>
+         Operation Failed
+      </div>
+      <div class="col-xs-6 col-sm-4">
+          <span>Generate Report</span>
+          <md-button class="md-fab md-mini" aria-label="Eat cake" ng-click="exportToExcel('#tableToExport')">
+            <md-icon md-menu-origin class="material-icons">import_export</md-icon>
+          </md-button>
+      </div>
+      <div>
+          <span>Create Vacancy</span>
+          <md-button class="md-fab md-mini" aria-label="Eat cake" ng-click="$ctrl.createVacancy('md')">
+              <md-icon md-menu-origin class="material-icons">add_circle</md-icon>
+          </md-button>
+      </div>
+      <div class="table-responsive">
+          <table class="table table-striped" id="tableToExport"   datatable="ng">
+           <span us-spinner="{radius:20, width:8, length:8}"></span>
+              <thead>
+                   <tr>
+                          <td>Code</td>
+                          <td>Position</td>
+                          <td>Qualifications</td>
+                          <td>Experience</td>
+                          <td>Description</td>
+                          <td>Due Date</td>
+                          <td>Salary</td>
+                          <td>Status</td>
+                          <td>Contact</td>
+                           <td>Level</td>
+                          <td>Mobile</td>
+                          <td>Number Required</td>
+                          <td>Option</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="vacancy in $ctrl.vacancies">
+                          <td>{{vacancy.code}}</td>
+                          <td>{{vacancy.position}}</td>
+                          <td>{{vacancy.qualifications}}</td>
+                          <td>{{vacancy.exprience}}</td>
+                          <td>{{vacancy.description}}</td>
+                          <td>{{vacancy.due_date | date : 'dd/MM/yyyy'}}</td>
+                          <td>{{vacancy.salary}}</td>
+                          <td>{{vacancy.status}}</td>
+                          <td>{{vacancy.contact}}</td>
+                          <td>{{vacancy.level}}</td>
+                          <td>{{vacancy.mobile}}</td>
+                          <td>{{vacancy.number_required}}</td>
+                          
+                          <td>
+                              <!--<button class="btn btn-info glyphicon glyphicon-eye-open" ng-click="$ctrl.view('md',vacancy)"></button>-->
+                              <button class="btn btn-primary glyphicon glyphicon-edit" ng-click="$ctrl.edit('md',vacancy)"></button>
+                          </td>
+                        </tr>
+                      </tbody>
+                 </table>
+             </div>
+           </div>
+       </div>
+
+

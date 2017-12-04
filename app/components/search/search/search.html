@@ -1,0 +1,181 @@
+<meta charset="utf-8">
+<!--<script src="geezinputs.js"></script>-->
+<!--<script src="ethiopicinput.min.js"></script>-->
+ <div class="col-lg-12 main-chart" ng-controller="SearchController" ng-cloak>
+     <h1>Search With Params</h1>
+        <form name="projectForm">
+          <fieldset class="clearfix">
+             <div class="row">
+                <div class="col-md-3">
+                   <select class="form-control" ng-model="$ctrl.category" ng-options="jobcategory.name as jobcategory.name for jobcategory in jobcategories">
+                      <option value="">-- Choose Job Category --</option>
+                </div>
+                <div class="col-md-3">
+                    <input  class="form-control" type="text" name="from" ng-model="$ctrl.from" placeholder="Experience From" >
+                </div>
+                <div class="col-md-3">
+                   <input  class="form-control" type="text" name="to" ng-model="$ctrl.to" placeholder="Experience To">
+                       <div class="form-group">
+                            <select placeholder="Select Level" class="form-control" ng-model="$ctrl.level" >
+                                <option value="BSC">Degree</option>
+                                <option value="MSC">Masters</option>
+                                <option value="MD">Doctrate</option>
+                                <option value="PHD">Phd</option>
+                                <option value="CER">Certificate</option>
+                                <option value="DIP">Diploma</option>
+                                <option value="COC">Coc</option>
+                                <option value="L3">Driver 1</option>
+                                <option value="L4">Driver 2</option>
+                                <option value="MOT">Driver 3</option>
+                                <option value="OPR">Operator</option>
+                                <option value="U10">-12</option>
+                            </select>
+                      </div>
+                </div>
+                <div class="col-md-3">
+      
+               <input  class="form-control" type="date" name="start date" ng-model="$ctrl.startdate" placeholder="Start Date Year/Month/Date" >
+             <input  class="form-control" type="date" name="end date" ng-model="$ctrl.enddate" placeholder="End Date Year/Month/Date">
+                </div>
+           </div>
+           <md-button class="md-fab md-mini" aria-label="Eat cake" ng-disabled="projectForm.$invalid" ng-click="$ctrl.search()">
+                 <md-icon md-menu-origin class="material-icons">search</md-icon>
+           </md-button>
+         </fieldset>
+     </form>
+     <br>
+    <button class="btn btn-primary" type="button" ng-click="$ctrl.prints()">Print for Customer</button>
+      <div class="table-responsive">
+        <!--<div id="printdata" style:"#headlineer">-->
+         <div id="printdata">
+          <table class="table table-striped">
+              <span us-spinner="{radius:20, width:8, length:8}"></span>
+                <thead>
+                    <tr>
+                      <td>Vacancy Code</td>
+                      <td>Position</td>
+                      <td>Experience</td>
+                      <td>Qualifications</td>
+                      <td>Description</td>
+                      <td>Due Date</td>
+                      <td>Salary</td>
+                      <td>Contact</td>
+                      <!--<td>Option</td>-->
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="searchdata in $ctrl.searchdatas">
+                    <td>{{searchdata.code}}</td>
+                    <td>{{searchdata.position}}</td>
+                    <td>{{searchdata.exprience}}</td>
+                    <td>{{searchdata.qualifications}}</td>
+                    <td>{{searchdata.description}}</td>
+                    <td>{{searchdata.due_date | date }}</td>
+                    <td>{{searchdata.salary}}</td>
+                    <td>{{searchdata.contact}}</td>
+                   </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--<button class="btn btn-primary" type="button" ng-click="$ctrl.printboard()">Print For Board</button>
+          <div id="printdataboard" style:"#headlineer">
+           <table class="table table-striped">
+             <span us-spinner="{radius:20, width:8, length:8}"></span>
+               <thead>
+                  <tr>
+                    <td>Vacancy Code</td>
+                    <td>Position</td>
+                    <td>Qualifications</td>
+                    <td>Experience</td>
+                    <td>Deadline</td>
+                   </tr>
+               </thead>
+               <tbody>
+                  <tr ng-repeat="searchdata in $ctrl.searchdatas">
+                    <td>{{searchdata.code}}</td>
+                    <td>{{searchdata.position}}</td>
+                    <td>{{searchdata.qualifications}}</td>
+                    <td>{{searchdata.exprience}}</td>
+                    <td>{{searchdata.due_date | date}}</td>
+                   </tr>
+               </tbody>
+             </table>
+           </div>-->
+       </div>
+
+      <h1>Search Only With Date</h1>
+       <form name="projectForm">
+          <fieldset class="clearfix">
+             <div class="row">
+               <div class="col-md-3">
+                  <input  class="form-control" type="date" name="end date" ng-model="$ctrl.enddate2" placeholder="End Date Year/Month/Date" >
+                  <input  class="form-control" type="date" name="start date" ng-model="$ctrl.startdate2" placeholder="Start Date Year/Month/Date" >
+                </div>
+              </div>
+              <md-button class="md-fab md-mini" aria-label="Eat cake" ng-disabled="projectForm.$invalid" ng-click="$ctrl.search2()">
+                 <md-icon md-menu-origin class="material-icons">search</md-icon>
+               </md-button>
+      <div class="col-xs-6 col-sm-4">
+          <span>Generate Report</span>
+          <md-button class="md-fab md-mini" aria-label="Eat cake" ng-click="exportToExcel('#tableToExport')">
+            <md-icon md-menu-origin class="material-icons">import_export</md-icon>
+          </md-button>
+      </div>
+            </fieldset>
+        </form>
+        <br>
+        <div class="table-responsive">
+        <button class="btn btn-primary" type="button" ng-click="$ctrl.printboard2()">Print For Board</button>
+            <!--<div id="printdataboard2" style:"#headlineer">-->
+            <div id="printdataboard2">
+              <table class="table table-striped" id="tableToExport">
+                  <span us-spinner="{radius:20, width:8, length:8}"></span>
+                    <thead>
+                        <tr>
+                           <td>Code</td>
+                          <td>Position</td>
+                          <td>Qualifications</td>
+                          <td>Experience</td>
+                          <td>Description</td>
+                          <td>Due Date</td>
+                          <td>Salary</td>
+                          <td>Status</td>
+                          <td>Contact</td>
+                           <td>Level</td>
+                          <td>Mobile</td>
+                          <td>Number Required</td>
+                          <td>Created At</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="searchdatasdate in $ctrl.searchdatasdates">
+
+                          <td>{{searchdatasdate.code}}</td>
+                          <td>{{searchdatasdate.position}}</td>
+                          <td>{{searchdatasdate.qualifications}}</td>
+                          <td>{{searchdatasdate.exprience}}</td>
+                          <td>{{searchdatasdate.description}}</td>
+                          <td>{{searchdatasdate.due_date | date }}</td>
+                          <td>{{searchdatasdate.salary}}</td>
+                          <td>{{searchdatasdate.status}}</td>
+                          <td>{{searchdatasdate.contact}}</td>
+                          <td>{{searchdatasdate.level}}</td>
+                          <td>{{searchdatasdate.mobile}}</td>
+                          <td>{{searchdatasdate.number_required}}</td>
+                          <td>{{searchdatasdate.created_at | date}}</td>
+
+
+                         </tr>
+                      </tbody>
+                   </table>
+                </div>
+             </div>
+        </div>
+      <!--<input type='file' xlsx-model="excel" >
+          <pre>{{excel | json}}</pre>
+           <button class="btn btn-info glyphicon glyphicon-eye-open" ng-click="$ctrl.send()">send</button>-->
+
+
+    
+
+

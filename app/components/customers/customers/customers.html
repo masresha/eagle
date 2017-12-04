@@ -1,0 +1,47 @@
+
+ <div class="col-lg-12 main-chart" ng-controller="CustomersController" ng-cloak>
+    <h1 class="page-title">Customers List</h1>
+      <div class="panel-body">
+         <span us-spinner="{radius:30, width:8, length: 16}"></span>
+         <div>
+          <!--<span>Create User</span>
+            <md-button class="md-fab md-mini" aria-label="Eat cake" ng-click="$ctrl.createUser('md')">
+                <md-icon md-menu-origin class="material-icons">add_circle</md-icon>
+            </md-button>-->
+         </div>
+            <!--<button class="glyphicon glyphicon-plus" ng-click="$ctrl.createUser('md')"></button>-->
+                <div class="table-responsive">
+                  <table class="table table-striped" datatable="ng">
+
+                      <thead>
+                        <tr>
+    
+                          <td>First Name</td>
+                          <td>Last Name</td>
+                          <td>Mobile Number</td>
+                          <td>Option</td>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="customer in $ctrl.customers">
+                          <td>{{customer.profile.first_name}}</td>
+                          <td>{{customer.profile.last_name}}</td>
+                          <td>{{customer.profile.mobile}}</td>
+                          
+                          
+                          <td>
+                              <!--<button class="btn btn-info glyphicon glyphicon-eye-open" ng-click="$ctrl.view('md',customer)"></button>-->
+                              <!--<button class="btn btn-primary glyphicon glyphicon-edit" ng-click="$ctrl.edit('md',customer)"></button>-->
+                              <button class="btn btn-primary glyphicon glyphicon-usd" ng-click="$ctrl.sell('md',customer)"></button>
+                             </td>
+                        </tr>
+                        
+                      </tbody>
+
+                </table>
+            </div>
+            
+       </div>
+</div>
+

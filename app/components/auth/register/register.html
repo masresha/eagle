@@ -1,0 +1,140 @@
+<div ng-controller="RegisterController" layout="column" ng-cloak>
+    <div class="logincontainer">
+        <div id="login">
+            <form name="projectForm">
+                <fieldset class="clearfix">
+                    <p><span><md-icon md-menu-origin class="material-icons">account_circle</md-icon></span><input required type="text" name="first_name" ng-model="$ctrl.first_name" placeholder="first_name"></p>
+                   <p><span><md-icon md-menu-origin class="material-icons">account_circle</md-icon></span><input required type="text" name="last_name" ng-model="$ctrl.last_name" placeholder="last_name"></p>
+                   <p><span><md-icon md-menu-origin class="material-icons">account_circle</md-icon></span><input required type="text" name="email" ng-model="$ctrl.email" placeholder="email"></p>
+                   
+                    <!-- JS because of IE support; better: placeholder="Username" -->
+                    <p><span><md-icon md-menu-origin class="material-icons">lock_outline</md-icon></span><input required type="password" type="password" name="pasword" ng-model="$ctrl.password" placeholder="Password">
+                   <p><span><md-icon md-menu-origin class="material-icons">account_circle</md-icon></span><input required type="text" name="phone_number" ng-model="$ctrl.phone_number" placeholder="Phone Number"></p>
+                  
+                        <p><button id="buttonlogin" type="button" ng-click="$ctrl.register()" ng-disabled="projectForm.$invalid" class="btn btn-primary btn-lg">Sign Up</button></p>
+                </fieldset>
+            </form>
+            <p>Not a member? <a ui-sref="auth.login" class="blue">Log In</a><span class="fontawesome-arrow-right"></span></p>
+        </div>
+    </div>
+</div>
+
+<!--<h1>Register page</h1>
+<div class="container">
+  <div class="col-md-4">
+    <form name="registerForm">
+      <div>
+        <div class="form-group">
+            <label>Username</label>
+              <input type="text" name="username" required class="form-control" ng-model="$ctrl.username" ng-minlength="3" ng-maxlength="8">
+                <p ng-show="loginForm.username.$error.minlength" class="has-error help-block">Username is too short.</p>
+                  <p ng-show="loginForm.username.$error.maxlength" class="help-block">Username is too long.</p>
+                  <p ng-show="loginForm.username.$error.required" class="help-block">This is required</p>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+              <input type="text" name="email" class="form-control" ng-model="$ctrl.email">
+        </div>
+
+
+      </div>
+      <div class="form-group">
+          <input type="password" name="password" class="form-control" ng-model="$ctrl.password" placeholder="password"
+            ng-minlenght="4" ng-maxlenght="8" required
+          >
+      </div>
+      <div>
+          <button ng-click="$ctrl.submit()" ng-disabled="loginForm.$invalid">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>-->
+<!--<div ng-controller="RegisterController" layout="column" ng-cloak>
+    <md-content layout-padding>
+        <form name="projectForm">
+            <div layout="row">
+                <md-input-container flex="25">
+                    <label>First Name</label>
+                    <input required name="firs_tame" ng-model="first_name">
+                    <div ng-messages="projectForm.first_name.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+                <br>
+                <md-input-container flex="25">
+                    <label>Last Name</label>
+                    <input required name="last_name" ng-model="last_name">
+                    <div ng-messages="projectForm.last_name.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+                <br>-->
+                <!--<md-input-container flex="50">
+                    <label>Account Type</label>
+                    <md-select name="type" ng-model="project.type" required>
+                        <md-option value="app">Admin</md-option>
+                        <md-option value="web">Owner</md-option>
+                    </md-select>
+                </md-input-container>-->
+            <!--</div>
+            <md-input-container class="md-block">
+                <label>Client Email</label>
+                <input required type="email" name="email" ng-model="email" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+                <div ng-messages="projectForm.email.$error" role="alert">
+                    <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                        Your email must be between 10 and 100 characters long and look like an e-mail address.
+                    </div>
+                </div>
+            </md-input-container>-->
+           <!--<md-input-container flex="50">
+                    <label>Phone Number</label>
+                    <input required type="number" name="phonenum" ng-model="project.phonenum">
+                    <div ng-messages="projectForm.phonenum.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>-->
+                 <!--<md-input-container flex="50">
+                    <label>Password</label>
+                    <input required type="password" name="password" ng-model="password">
+                    <div ng-messages="projectForm.password.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>-->
+               <!--<md-input-container flex="50">
+                    <label>Confirm Password</label>
+                    <input required type="password" name="confirmpassword" ng-model="project.confirmpassword">
+                    <div ng-messages="projectForm.confirmpassword.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>-->
+            <!--<md-input-container class="md-block">
+                <md-checkbox name="tos" ng-model="project.tos" required>
+                    I accept the terms of service.
+                </md-checkbox>
+                <div ng-messages="projectForm.tos.$error" multiple md-auto-hide="false">
+                    <div ng-message="required">
+                        You must accept the terms of service before you can proceed.
+                    </div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <md-switch class="md-primary" name="special" ng-model="project.special" required>
+                    Enable special options.
+                </md-switch>
+                <div ng-messages="projectForm.special.$error" multiple>
+                    <div ng-message="required">
+                        You must enable all special options before you can proceed.
+                    </div>
+                </div>
+            </md-input-container>-->
+            <!--<div>
+                <md-button type="submit" ng-click="$ctrl.register()">Submit</md-button>
+            </div>
+            <p style="font-size:.8em; width: 100%; text-align: center;">
+                Make sure to include <a href="https://docs.angularjs.org/api/ngMessages" target="_blank">ngMessages</a> module when using ng-message markup.
+            </p>
+        </form>
+    </md-content>
+
+</div>-->

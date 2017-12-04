@@ -1,0 +1,46 @@
+<!--<script src="assets/common-scripts.js"></script>-->
+
+<aside>
+    <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+           <p class="centered">
+                <a href="profile.html"><img src="assets/img/ui-sherman.jpg" class="img-circle" width="60"></a>
+            </p>
+            <h5 class="centered">{{$ctrl.userv.user.email}}</h5>
+
+            <li class="sub-menu">
+                <a class="active" ui-sref="dashboard">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            
+             
+            <li class="sub-menu">
+                <a ui-sref="usermanage">
+                    <i class="fa fa-user"></i>
+                    <span>Manage Users</span>
+                </a>
+
+            </li>
+            
+            <li class="sub-menu">
+                <a ui-sref="vacancy">
+                    <i class="fa fa-user"></i>
+                    <span>Manage Vacancy</span>
+                </a>
+
+            </li>
+            <li class="sub-menu">
+                <a ui-sref="jobcategory">
+                    <i class="fa fa-user"></i>
+                    <span>Manage Categories</span>
+                </a>
+
+            </li>
+
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+</aside>

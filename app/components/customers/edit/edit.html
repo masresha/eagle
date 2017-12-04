@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Edit User</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <form name="userEditForm">
+        
+        <div class="form-group">
+            <label for="userEmail">Email</label>
+            <input type="text" class="form-control" id="userFirstName" placeholder="Your Name" ng-model="$ctrl.user.first_name">
+        </div>
+        <div class="form-group">
+            <label for="userName">Name</label>
+            <input type="text" class="form-control" id="userLastName" placeholder="Your Name" ng-model="$ctrl.user.last_name">
+        </div>
+        <div class="form-group">
+            <label for="userAge">Age</label>
+            <input type="text" class="form-control" id="userAge" placeholder="Your Age please!" ng-model="$ctrl.user.user">
+        </div>
+        <div class="form-group">
+            <label for="userAge">Age</label>
+            <textarea ui-tinymce ng-model="$ctrl.user.user"></textarea>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+</div>

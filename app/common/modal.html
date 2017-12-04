@@ -1,0 +1,15 @@
+<h1>Modal</h1>
+<div class="modal-header" data-backdrop="static">
+  <h3 class="modal-title" id="modal-title">User: {{$ctrl.user.user}}</h3>
+</div>
+
+<div class="modal-body" id="modal-body">
+  <div>Username : {{$ctrl.user._id}}</div>
+  <div>Email : {{$ctrl.user.first_name}}</div>
+  <div>Position : {{$ctrl.user.last_name}}</div>
+  <div>Position : {{$ctrl.user.user}}</div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+  <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+</div>

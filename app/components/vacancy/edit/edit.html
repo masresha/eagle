@@ -1,0 +1,64 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Edit Vacancy</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="alert alert-success" id="infosuccess" hidden>
+        Operation Successfull.
+     </div>
+     <div class="alert alert-danger" id="infofail" hidden>
+         Operation Failed
+     </div>
+    <form name="vacancyEditForm">
+       
+        <div class="form-group">
+            <label for="vacancyEmail">contact</label>
+            <input type="text" class="form-control" id="vacancyFirstName" placeholder="Your Name" ng-model="$ctrl.vacancy.contact">
+        </div>
+        <div class="form-group">
+            <label for="vacancyName">description</label>
+            <input type="text" class="form-control" id="vacancyLastName" placeholder="Your Name" ng-model="$ctrl.vacancy.description">
+        </div>
+        <div class="form-group">
+            <label for="vacancyAge">due_date</label>
+            <input type="text" class="form-control" id="vacancyAge" placeholder="Your Age please!" ng-model="$ctrl.vacancy.due_date | date : 'dd/MM/yyyy'">
+        </div>
+          <!--<div class="form-group">
+            <label for="vacancyName">email</label>
+            <input type="text" class="form-control" id="vacancyId" placeholder="Your Name" ng-model="$ctrl.vacancy.email">
+        </div>-->
+        <div class="form-group">
+            <label for="vacancyEmail">experience</label>
+            <input type="text" class="form-control" id="vacancyFirstName" placeholder="Your Name" ng-model="$ctrl.vacancy.exprience">
+        </div>
+        <div class="form-group">
+            <label for="vacancyName">level</label>
+            <input type="text" class="form-control" id="vacancyLastName" placeholder="Your Name" ng-model="$ctrl.vacancy.level">
+        </div>
+        <div class="form-group">
+            <label for="vacancyAge">mobile</label>
+            <input type="text" class="form-control" id="vacancyAge" placeholder="Your Age please!" ng-model="$ctrl.vacancy.mobile">
+        </div>
+         <div class="form-group">
+            <label for="vacancyAge">number_required</label>
+            <input type="text" class="form-control" id="vacancyAge" placeholder="Your Age please!" ng-model="$ctrl.vacancy.number_required">
+        </div>
+                <div class="form-group">
+            <label for="vacancyName">position</label>
+            <input type="text" class="form-control" id="vacancyId" placeholder="Your Name" ng-model="$ctrl.vacancy.position">
+        </div>
+        <div class="form-group">
+            <label for="vacancyEmail">qualifications</label>
+            <input type="text" class="form-control" id="vacancyFirstName" placeholder="Your Name" ng-model="$ctrl.vacancy.qualifications">
+        </div>
+        <div class="form-group">
+            <label for="vacancyName">salary</label>
+            <input type="text" class="form-control" id="vacancyLastName" placeholder="Your Name" ng-model="$ctrl.vacancy.salary">
+        </div>
+        
+        
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+</div>

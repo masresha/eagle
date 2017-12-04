@@ -1,0 +1,35 @@
+
+ <div ng-controller="JobcategoryController" ng-cloak class="col-lg-12 main-chart">
+  <h1 class="page-title">Job Categories</h1>
+    <div class="panel-body">
+              <div><span>Create Job Catergory</span>
+                 <md-button class="md-fab md-mini" aria-label="Eat cake" ng-click="$ctrl.createjobcategory('md')">
+                   <md-icon md-menu-origin class="material-icons">add_circle</md-icon>
+                 </md-button>
+              </div>
+            <!--<button class="glyphicon glyphicon-plus" ng-click="$ctrl.createVacancy('md')"></button>-->
+                <div class="table-responsive">
+                  <table class="table table-striped" datatable="ng">
+                    <span us-spinner="{radius:20, width:8, length:8}"></span>
+                     <thead>
+                        <tr>
+                          <td>Name</td>
+                          <td>Option</td>
+                       </tr>
+                     </thead>
+                      <tbody>
+                        <tr ng-repeat="jobcategory in $ctrl.jobcategories">
+                          <td>{{jobcategory.name}}</td>
+                          <td>
+                              <button class="btn btn-info glyphicon glyphicon-eye-open" ng-click="$ctrl.view('md',jobcategory)"></button>
+                              <button class="btn btn-primary glyphicon glyphicon-edit" ng-click="$ctrl.edit('md',jobcategory)"></button>
+                             </td>
+                        </tr>
+                        
+                      </tbody>
+
+                </table>
+            </div>
+       </div>
+</div>
+

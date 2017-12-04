@@ -1,0 +1,19 @@
+<h1>Modal</h1>
+<div class="modal-header" data-backdrop="static">
+  <h3 class="modal-title" id="modal-title">User</h3>
+</div>
+
+<div class="modal-body" id="modal-body">
+                          
+  <div>country : {{$ctrl.user.country}}</div>
+  <div>city : {{$ctrl.user.city}}</div>
+  <div>email : {{$ctrl.user.email}}</div>
+  <div>first_name : {{$ctrl.user.first_name}}</div>
+  <div>last_name : {{$ctrl.user.last_name}}</div>
+  <div>gender : {{$ctrl.user.gender}}</div>
+  <div>mobile : {{$ctrl.user.mobile}</div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+  <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+</div>

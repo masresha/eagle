@@ -1,0 +1,84 @@
+
+ <div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Create Vacancy</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="alert alert-success" id="infosuccess" hidden>
+        Operation Successfull.
+      </div>
+      <div class="alert alert-danger" id="infofail" hidden>
+         Operation Failed
+     </div>
+    <form name="userCreateForm">
+    <div class="panel-body">
+ 
+        <div class="form-group input-group">
+             <span class="input-group-addon">@</span>
+             <input   type="text" class="form-control" placeholder="Position" ng-model="$ctrl.position" required>
+        </div> 
+        <div class="form-group input-group">
+             <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" placeholder="Description" ng-model="$ctrl.description" required>
+        </div> 
+
+        <div class="form-group input-group">
+          <select   class="form-control" ng-model="$ctrl.job_category" ng-options="jobcategory.name as jobcategory.name for jobcategory in jobcategories">
+        <option value="">-- Choose Job Category --</option>
+       
+        </select>
+        
+        </div>
+        <div class="form-group input-group">
+             <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" placeholder="Exprience" ng-model="$ctrl.exprience" required>
+        </div>    
+        <div class="form-group input-group">
+             <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" placeholder="Qualification" ng-model="$ctrl.qualifications" required>
+        </div>  
+        <div class="form-group input-group">
+             <span class="input-group-addon">@</span>
+            <input type="date" class="form-control" placeholder="Due Date" ng-model="$ctrl.due_date" required>
+        </div>  
+        <div class="form-group input-group">
+             <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" placeholder="Salary" ng-model="$ctrl.salary" required>
+        </div>
+        <div class="form-group input-group">
+             <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" placeholder="Number Required" ng-model="$ctrl.number_required" required>
+        </div> 
+        <div class="form-group input-group">
+             <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" placeholder="Mobile Number" ng-model="$ctrl.mobile" required>
+        </div> 
+         <div class="form-group input-group">
+             <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" placeholder="Contact" ng-model="$ctrl.contact" required>
+        </div>
+        <div class="form-group">
+            <label>Level</label>
+                <select class="form-control" ng-model="$ctrl.level" required>
+                       <option value="BSC">Degree</option>
+                      <option value="MSC">Masters</option>
+                      <option value="MD">Doctrate</option>
+                      <option value="PHD">Phd</option>
+                      <option value="CER">Certificate</option>
+                      <option value="DIP">Diploma</option>
+                      <option value="COC">Coc</option>
+                      <option value="L3">Driver 1</option>
+                      <option value="L4">Driver 2</option>
+                      <option value="MOT">Driver 3</option>
+                      <option value="OPR">Operator</option>
+                      <option value="U10">-12</option>
+                      
+                </select>
+         </div>
+        
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-success" ng-click="$ctrl.ok()" >Submit</button>
+            
+            <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

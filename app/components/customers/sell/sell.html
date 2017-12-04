@@ -1,0 +1,42 @@
+
+<div class="modal-header" data-backdrop="static">
+  <h3 class="modal-title" id="modal-title">Card Selling</h3>
+</div>
+
+<div class="modal-body" id="modal-body">
+  
+<div class="alert alert-success" id="infosuccess" hidden>
+   Operation Successfull.
+</div>
+<div class="alert alert-danger" id="infofail" hidden>
+    Operation Failed
+</div>                   
+  <div>ID : {{$ctrl.customer.profile.customer}}</div>
+  <div>Category Lenght : {{$ctrl.customer.job_category.length}}</div>
+  <div>First Name : {{$ctrl.customer.profile.first_name}}</div>
+  <div>Last Name : {{$ctrl.customer.profile.last_name}}</div>
+</div>
+<table class="table table-striped" datatable="ng">
+    <span us-spinner="{radius:20, width:8, length:8}"></span>
+        <thead>
+           <tr>
+              <td>Key</td>
+              <td>Status</td>
+              <td>Option</td>
+           </tr>
+         </thead>
+      <tbody>
+          <tr ng-repeat="card in $ctrl.cards">
+             <td>{{card.key}}</td>
+             <td>{{card.status}}</td>
+             <td>
+               <button class="btn btn-primary glyphicon glyphicon-edit" ng-click="$ctrl.sold(card)"></button>
+              </td>
+            </tr>
+       </tbody>
+</table>
+
+<div class="modal-footer">
+  <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+  <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+</div>

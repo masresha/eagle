@@ -1,0 +1,81 @@
+
+ <div ng-controller="CardsController" ng-cloak class="col-lg-12 main-chart">
+   <!--<div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">26</div>
+                                    <div>New Comments!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>-->
+                
+  <h1 class="page-title">Card</h1>
+    <form name="userCreateForm">
+      
+       <div class="form-group">
+            <label>Please Select Card Level</label>
+                <select class="form-control" ng-model="$ctrl.cardlevel" required>
+                      <option value="level1">Level 1</option>
+                      <option value="level2">Level 2</option>
+                      <option value="level3">Level 3</option>
+                </select>
+         </div>
+         <button type="submit" class="btn btn-success" ng-click="$ctrl.viewcard()" >View Card</button>
+        <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+      </div>
+    </form>
+    <div class="panel-body">
+              <div><span>Create Card</span>
+                 <md-button class="md-fab md-mini" aria-label="Eat cake" ng-click="$ctrl.createcards('md')">
+                   <md-icon md-menu-origin class="material-icons">add_circle</md-icon>
+                 </md-button>
+                 <span>Print Cards</span>
+                 <md-button class="md-fab md-mini" aria-label="Eat cake" ng-click="$ctrl.printcards()">
+                   <md-icon md-menu-origin class="material-icons">add_circle</md-icon>
+                 </md-button>
+              </div>
+            <!--<button class="glyphicon glyphicon-plus" ng-click="$ctrl.createVacancy('md')"></button>-->
+                <div class="table-responsive">
+                <!--<div id="printdata" style:"#headlineer">-->
+                     <div id="printdata">
+                  <table class="table table-striped" datatable="ng">
+                    <span us-spinner="{radius:20, width:8, length:8}"></span>
+                     <thead>
+                        <tr>
+                          <td>Key</td>
+                          <td>Status</td>
+                          <td>Option</td>
+                       </tr>
+                     </thead>
+                      <tbody>
+                        <tr ng-repeat="card in $ctrl.cards">
+                          <td>{{card.key}}</td>
+                          <td>{{card.status}}</td>
+                          <td>
+                              <!--<button class="btn btn-info glyphicon glyphicon-eye-open" ng-click="$ctrl.view('md',jobcategory)"></button>-->
+                              <!--<button class="btn btn-primary glyphicon glyphicon-edit" ng-click="$ctrl.edit('md',jobcategory)"></button>-->
+                             </td>
+                        </tr>
+                        
+                      </tbody>
+
+                </table>
+            </div>
+       </div>
+    </div>
+</div>
+
